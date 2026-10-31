@@ -1,0 +1,215 @@
+╔══════════════════════════════════════════════════════════════════╗
+║     GUIDE RAPIDE - Gestionnaire de Disques V02                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+🚀 DÉMARRAGE RAPIDE
+═══════════════════
+
+1. Installation :
+   ./install.sh
+
+2. Lancement :
+   python3 disk_manager_v02.py
+   ou
+   ./launch.sh
+
+
+📂 EXPLORATEUR DE FICHIERS
+═══════════════════════════
+
+Navigation :
+  ⬅️  Retour      - Revenir en arrière dans l'historique
+  ⬆️  Parent      - Aller au dossier parent
+  🏠 Accueil     - Retour au dossier personnel (~)
+  🔄 Actualiser  - Recharger le contenu
+
+Utilisation :
+  • Double-clic sur un dossier → Ouvrir
+  • Double-clic sur un fichier → Afficher les infos
+  • Clic droit → Menu contextuel
+  • Recherche → Filtrer en temps réel
+  • Clic sur en-tête → Trier par colonne
+
+Informations affichées :
+  📛 Nom (avec icône selon le type)
+  📏 Taille (B, KB, MB, GB, TB)
+  📄 Type de fichier
+  👤 Propriétaire
+  👥 Groupe
+  🔒 Permissions (rwxrwxrwx)
+  📅 Date de modification
+  📅 Date de création
+  📅 Date d'accès
+
+
+⚙️ GESTIONNAIRE DE PROCESSUS
+═════════════════════════════
+
+Fonctionnalités :
+  • Actualisation automatique (3 secondes)
+  • Liste triée par utilisation CPU
+  • Codes couleur :
+    - Rouge : Utilisation élevée (>50% CPU ou >10% RAM)
+    - Orange : Utilisation moyenne (>20% CPU ou >5% RAM)
+    - Vert : Processus actif (running)
+    - Bleu : Processus en veille (sleeping)
+
+Actions :
+  • Clic droit sur un processus :
+    - ℹ️  Détails complets
+    - ❌ Terminer le processus (avec confirmation)
+  • Recherche : Filtrer par nom
+
+Informations affichées :
+  🔢 PID (Process ID)
+  📛 Nom du processus
+  👤 Utilisateur
+  💻 CPU (%)
+  🧠 Mémoire (% et MB)
+  📊 État
+  🔧 Ligne de commande
+
+
+🖴 GESTION DES DISQUES
+══════════════════════
+
+Montage :
+  1. Sélectionner le mode (Lecture seule / Lecture-écriture)
+  2. Cliquer sur "Monter"
+  3. Confirmer
+  4. Le disque apparaît comme "✓ Monté"
+
+Démontage :
+  1. Cliquer sur "Démonter"
+  2. Confirmer
+  3. Le disque apparaît comme "✗ Non monté"
+
+Explorer :
+  1. Cliquer sur "Explorer" (disque monté uniquement)
+  2. L'explorateur s'ouvre sur le point de montage
+
+Analyser :
+  1. Cliquer sur "Analyser" (disque monté uniquement)
+  2. Attendre la fin de l'analyse
+  3. Voir le graphique circulaire
+
+
+📊 GRAPHIQUE CIRCULAIRE
+═══════════════════════
+
+  • Affiche les 10 plus gros éléments
+  • Pourcentages et tailles visibles
+  • Catégorie "Autres" pour le reste
+  • Nécessite d'avoir analysé un disque
+
+
+📝 LOGS
+═══════
+
+  • Historique horodaté de toutes les opérations
+  • Messages de succès : ✓
+  • Messages d'erreur : ✗
+  • Défilement automatique vers le bas
+
+
+🔒 PERMISSIONS (Format Unix)
+════════════════════════════
+
+Format : drwxrwxrwx
+
+Position 1 : Type
+  d = Dossier
+  l = Lien symbolique
+  - = Fichier
+
+Positions 2-4 : Propriétaire
+  r = Lecture (read)
+  w = Écriture (write)
+  x = Exécution (execute)
+
+Positions 5-7 : Groupe
+  r, w, x (même signification)
+
+Positions 8-10 : Autres
+  r, w, x (même signification)
+
+Exemples :
+  drwxr-xr-x  → Dossier, proprio: rwx, groupe: rx, autres: rx
+  -rw-r--r--  → Fichier, proprio: rw, groupe: r, autres: r
+  -rwxrwxrwx  → Fichier, tout le monde peut tout faire
+
+
+🎨 ICÔNES DE FICHIERS
+═════════════════════
+
+📁 Dossier          🐍 Python (.py)      📝 Texte (.txt)
+📕 PDF (.pdf)       📊 Excel (.xls)      🖼️  Image (.jpg/.png)
+🎵 Audio (.mp3)     🎬 Vidéo (.mp4)      📦 Archive (.zip)
+⚙️  Exécutable      🌐 Web (.html)       🔗 Lien symbolique
+📄 Fichier générique
+
+
+⌨️ RACCOURCIS UTILES
+════════════════════
+
+Explorateur :
+  • Double-clic : Ouvrir/Afficher infos
+  • Clic droit : Menu contextuel
+  • Recherche : Filtrage instantané
+
+Processus :
+  • Clic droit : Actions sur le processus
+  • Recherche : Trouver un processus
+
+
+⚠️ NOTES IMPORTANTES
+════════════════════
+
+1. Privilèges sudo :
+   - Nécessaire pour monter/démonter les disques
+   - Vous serez invité à entrer votre mot de passe
+
+2. Accès aux fichiers :
+   - Certains dossiers système nécessitent des privilèges
+   - Un message d'avertissement s'affiche si accès refusé
+
+3. Processus système :
+   - Soyez prudent en terminant des processus
+   - Ne terminez pas de processus critiques
+   - Certains processus nécessitent des privilèges root
+
+4. Performance :
+   - L'analyse de gros disques peut prendre du temps
+   - Limité à 200 processus affichés
+   - Actualisation automatique toutes les 3 secondes
+
+
+🆘 DÉPANNAGE
+════════════
+
+Problème : Module PyQt5 non trouvé
+Solution : pip3 install PyQt5
+
+Problème : Module psutil non trouvé
+Solution : pip3 install psutil
+
+Problème : Permission refusée (explorateur)
+Solution : Normal pour certains dossiers système
+
+Problème : Impossible de terminer un processus
+Solution : Nécessite les droits appropriés
+
+Problème : Erreur de montage
+Solution : Vérifiez que ntfs-3g est installé
+          sudo apt install ntfs-3g
+
+
+📧 SUPPORT
+══════════
+
+Pour plus d'informations, consultez le README.md complet.
+
+
+═══════════════════════════════════════════════════════════════════
+Version 02 - Décembre 2025
+═══════════════════════════════════════════════════════════════════

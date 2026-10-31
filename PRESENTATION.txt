@@ -1,0 +1,283 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║           🖴  GESTIONNAIRE DE DISQUES V02 - EXPLORATEUR AVANCÉ  🖴           ║
+║                                                                              ║
+║                        Application de Gestion Complète                       ║
+║                    Disques • Fichiers • Processus • Analyse                  ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                          🎯 FONCTIONNALITÉS PRINCIPALES                      │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  ╭─────────────────────────────────────────────────────────────────────────╮
+  │  📂  EXPLORATEUR DE FICHIERS AVANCÉ                                     │
+  ├─────────────────────────────────────────────────────────────────────────┤
+  │                                                                         │
+  │  ✨ Navigation complète du système de fichiers                         │
+  │  ✨ 9 colonnes d'informations détaillées                               │
+  │  ✨ Permissions Unix (rwxrwxrwx)                                        │
+  │  ✨ Propriétaire et groupe                                             │
+  │  ✨ Dates (modification, création, accès)                              │
+  │  ✨ Recherche et filtrage en temps réel                                │
+  │  ✨ Menu contextuel (ouvrir, propriétés, copier)                       │
+  │  ✨ Navigation avec historique (retour/parent/accueil)                 │
+  │  ✨ Icônes contextuelles (30+ types de fichiers)                       │
+  │  ✨ Tri par colonne                                                    │
+  │                                                                         │
+  ╰─────────────────────────────────────────────────────────────────────────╯
+
+  ╭─────────────────────────────────────────────────────────────────────────╮
+  │  ⚙️  GESTIONNAIRE DE PROCESSUS                                          │
+  ├─────────────────────────────────────────────────────────────────────────┤
+  │                                                                         │
+  │  ✨ Surveillance en temps réel (actualisation 3s)                      │
+  │  ✨ Liste complète des processus (PID, nom, utilisateur)               │
+  │  ✨ Utilisation CPU et mémoire (% et valeurs absolues)                 │
+  │  ✨ État des processus (running, sleeping, etc.)                       │
+  │  ✨ Statistiques système globales                                      │
+  │  ✨ Codes couleur (rouge/orange pour forte utilisation)                │
+  │  ✨ Filtrage par nom                                                   │
+  │  ✨ Actions : Détails complets, Terminer processus                     │
+  │                                                                         │
+  ╰─────────────────────────────────────────────────────────────────────────╯
+
+  ╭─────────────────────────────────────────────────────────────────────────╮
+  │  🖴  GESTION DES DISQUES                                                │
+  ├─────────────────────────────────────────────────────────────────────────┤
+  │                                                                         │
+  │  ✨ Détection automatique des disques et partitions                    │
+  │  ✨ Montage/Démontage avec interface graphique                         │
+  │  ✨ Modes : Lecture seule ou Lecture-écriture                          │
+  │  ✨ Support NTFS, ext4, FAT32, etc.                                    │
+  │  ✨ Bouton "Explorer" pour navigation directe                          │
+  │  ✨ Analyse de l'utilisation (graphique circulaire)                    │
+  │  ✨ Affichage détaillé de l'état                                       │
+  │                                                                         │
+  ╰─────────────────────────────────────────────────────────────────────────╯
+
+  ╭─────────────────────────────────────────────────────────────────────────╮
+  │  📊  VISUALISATION ET ANALYSE                                           │
+  ├─────────────────────────────────────────────────────────────────────────┤
+  │                                                                         │
+  │  ✨ Graphique circulaire (Top 10 des plus gros éléments)               │
+  │  ✨ Pourcentages et tailles formatées                                  │
+  │  ✨ Logs horodatés de toutes les opérations                            │
+  │  ✨ Barre de progression pour analyses longues                         │
+  │                                                                         │
+  ╰─────────────────────────────────────────────────────────────────────────╯
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                           📊 INFORMATIONS AFFICHÉES                          │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  EXPLORATEUR DE FICHIERS :
+  ┌────────────┬──────────────────────────────────────────────────────────┐
+  │ Colonne    │ Description                                              │
+  ├────────────┼──────────────────────────────────────────────────────────┤
+  │ Nom        │ Nom avec icône contextuelle (📁 📄 🐍 📊 🖼️ etc.)        │
+  │ Taille     │ Formatée automatiquement (B, KB, MB, GB, TB)             │
+  │ Type       │ Type de fichier (Dossier, Fichier PDF, etc.)            │
+  │ Propriétaire│ Utilisateur propriétaire du fichier                    │
+  │ Groupe     │ Groupe propriétaire                                      │
+  │ Permissions│ Format Unix (drwxrwxrwx)                                 │
+  │ Modifié    │ Date et heure de dernière modification                  │
+  │ Créé       │ Date et heure de création                                │
+  │ Accédé     │ Date et heure de dernier accès                           │
+  └────────────┴──────────────────────────────────────────────────────────┘
+
+  GESTIONNAIRE DE PROCESSUS :
+  ┌────────────┬──────────────────────────────────────────────────────────┐
+  │ Colonne    │ Description                                              │
+  ├────────────┼──────────────────────────────────────────────────────────┤
+  │ PID        │ Process ID (identifiant unique)                          │
+  │ Nom        │ Nom du processus                                         │
+  │ Utilisateur│ Utilisateur qui a lancé le processus                     │
+  │ CPU %      │ Pourcentage d'utilisation CPU                            │
+  │ Mémoire %  │ Pourcentage d'utilisation mémoire                        │
+  │ Mémoire MB │ Mémoire utilisée en mégaoctets                           │
+  │ État       │ État actuel (running, sleeping, zombie, etc.)            │
+  │ Commande   │ Ligne de commande complète                               │
+  └────────────┴──────────────────────────────────────────────────────────┘
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                            🎨 INTERFACE UTILISATEUR                          │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  ╔════════════════════════════════════════════════════════════════════════╗
+  ║                🖴 Gestionnaire de Disques V02                          ║
+  ╠════════════════════════════════════════════════════════════════════════╣
+  ║                                                                        ║
+  ║  [🔄 Rafraîchir la liste des disques]                                 ║
+  ║                                                                        ║
+  ║  ┌──────────────────────────────────────────────────────────────────┐ ║
+  ║  │ Périphérique │ Taille │ Type │ Label │ État │ Actions          │ ║
+  ║  ├──────────────────────────────────────────────────────────────────┤ ║
+  ║  │ /dev/sdb1    │ 932G   │ ntfs │ Data  │ ✓    │[Démonter][Explorer]║
+  ║  │ /dev/nvme1n1 │ 954G   │ ext4 │ Backup│ ✗    │[Monter]          │ ║
+  ║  └──────────────────────────────────────────────────────────────────┘ ║
+  ║                                                                        ║
+  ║  Options: ○ Lecture seule  ● Lecture-écriture                        ║
+  ║                                                                        ║
+  ╠════════════════════════════════════════════════════════════════════════╣
+  ║                                                                        ║
+  ║  [📂 Explorateur] [⚙️ Processus] [📊 Graphique] [📝 Logs]            ║
+  ║                                                                        ║
+  ║  ┌──────────────────────────────────────────────────────────────────┐ ║
+  ║  │ [⬅ Retour] [⬆ Parent] [🏠 Accueil] /home/user [🔄 Actualiser]   │ ║
+  ║  │                                                                  │ ║
+  ║  │ 🔍 Rechercher: [________________]                                │ ║
+  ║  │                                                                  │ ║
+  ║  │ ┌────────────────────────────────────────────────────────────┐ │ ║
+  ║  │ │ Nom         │ Taille │ Propriétaire │ Permissions │ ...   │ │ ║
+  ║  │ ├────────────────────────────────────────────────────────────┤ │ ║
+  ║  │ │ 📁 Documents│   -    │ darkus       │ drwxr-xr-x  │ ...   │ │ ║
+  ║  │ │ 📄 file.txt │ 1.2 KB │ darkus       │ -rw-r--r--  │ ...   │ │ ║
+  ║  │ │ 🐍 script.py│ 3.5 KB │ darkus       │ -rwxr-xr-x  │ ...   │ │ ║
+  ║  │ └────────────────────────────────────────────────────────────┘ │ ║
+  ║  │                                                                  │ ║
+  ║  │ 📁 3 dossiers • 📄 15 fichiers • 📍 /home/user                  │ ║
+  ║  └──────────────────────────────────────────────────────────────────┘ ║
+  ║                                                                        ║
+  ║  Prêt                                                                  ║
+  ╚════════════════════════════════════════════════════════════════════════╝
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                          🚀 INSTALLATION ET LANCEMENT                        │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  INSTALLATION AUTOMATIQUE :
+  ──────────────────────────
+  $ cd /home/darkus/CascadeProjects/DiskManagerV02
+  $ ./install.sh
+
+  INSTALLATION MANUELLE :
+  ───────────────────────
+  $ sudo apt install python3 python3-pip ntfs-3g
+  $ pip3 install PyQt5 matplotlib psutil
+  $ chmod +x disk_manager_v02.py
+
+  LANCEMENT :
+  ───────────
+  $ python3 disk_manager_v02.py
+  ou
+  $ ./launch.sh
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                            💡 EXEMPLES D'UTILISATION                         │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  1️⃣  MONTER ET EXPLORER UN DISQUE USB
+      ─────────────────────────────────
+      • Brancher le disque USB
+      • Cliquer sur "🔄 Rafraîchir"
+      • Sélectionner "Lecture-écriture"
+      • Cliquer sur "Monter"
+      • Cliquer sur "Explorer"
+      → L'explorateur s'ouvre sur le disque
+
+  2️⃣  TROUVER LES GROS FICHIERS
+      ──────────────────────────
+      • Dans l'explorateur, cliquer sur l'en-tête "Taille"
+      • Les fichiers sont triés par taille décroissante
+      • Double-cliquer pour voir les détails
+      → Identifiez rapidement les fichiers volumineux
+
+  3️⃣  SURVEILLER UN PROCESSUS
+      ────────────────────────
+      • Aller dans l'onglet "⚙️ Processus"
+      • Utiliser la recherche pour trouver le processus
+      • Clic droit → "ℹ️ Détails" pour voir toutes les infos
+      • Observer l'utilisation CPU/RAM en temps réel
+      → Surveillance complète du processus
+
+  4️⃣  VÉRIFIER LES PERMISSIONS
+      ─────────────────────────
+      • Naviguer vers le fichier dans l'explorateur
+      • Consulter la colonne "Permissions"
+      • Double-cliquer pour voir tous les détails
+      • Vérifier propriétaire et groupe
+      → Audit complet des droits d'accès
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                            🎯 POINTS FORTS DE LA V02                         │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  ✅ Interface moderne et intuitive
+  ✅ Toutes les informations en un seul endroit
+  ✅ Navigation fluide avec historique
+  ✅ Recherche et filtrage instantanés
+  ✅ Surveillance en temps réel
+  ✅ Codes couleur pour repérage rapide
+  ✅ Menu contextuel pour actions rapides
+  ✅ Documentation complète
+  ✅ Installation automatisée
+  ✅ Multi-threading (interface non bloquante)
+  ✅ Gestion des erreurs robuste
+  ✅ Support de tous les systèmes de fichiers Linux
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                              📚 FICHIERS DU PROJET                           │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  disk_manager_v02.py  → Application principale (1600+ lignes)
+  requirements.txt     → Dépendances Python
+  install.sh           → Script d'installation automatique
+  launch.sh            → Script de lancement rapide
+  README.md            → Documentation complète
+  GUIDE_RAPIDE.txt     → Guide de démarrage rapide
+  CHANGELOG.md         → Historique des versions
+  PRESENTATION.txt     → Ce fichier
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                              ⚠️ NOTES IMPORTANTES                            │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  🔒 PRIVILÈGES SUDO
+     Le montage/démontage de disques nécessite sudo.
+     Vous serez invité à entrer votre mot de passe.
+
+  🔐 ACCÈS AUX FICHIERS
+     Certains dossiers système nécessitent des privilèges root.
+     Un message d'avertissement s'affiche si l'accès est refusé.
+
+  ⚙️ PROCESSUS SYSTÈME
+     Soyez prudent en terminant des processus.
+     Ne terminez jamais de processus système critiques.
+
+  🚀 PERFORMANCE
+     • Analyse de gros disques : peut prendre du temps
+     • Processus : limité à 200 pour les performances
+     • Actualisation automatique : toutes les 3 secondes
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                              🆘 SUPPORT ET AIDE                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  📖 Documentation complète : README.md
+  ⚡ Démarrage rapide : GUIDE_RAPIDE.txt
+  📋 Historique : CHANGELOG.md
+
+  Problèmes courants :
+  • Module non trouvé → pip3 install [module]
+  • Permission refusée → Normal pour dossiers système
+  • Erreur de montage → Vérifier ntfs-3g installé
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                    🎉 Merci d'utiliser Disk Manager V02 ! 🎉                 ║
+║                                                                              ║
+║                        Version 02 - Décembre 2025                            ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
